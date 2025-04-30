@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Interactif</title>
+</head>
+<body style="background-color: #fcba03;">
+  <h1 style="text-align:center;">QUIZ INTERACTIF</h1>
+  <div style="display : flex; justify-content : center;">
+  <button onclick="demarrerQuiz()" style="padding: 20px; font-weight: bold; font-size: 30px; margin-top:160px; background-color: #03cafc;" >Démarrer Le Quiz</button>
+  </div>
+  <script>
+    function demarrerQuiz(){
+  const questions=[["Quel est le plus long fleuve du monde ?","Nil"],["Quelle est la capitale du Japon","Tokyo"],["Combien y a-t-il de jours dans une année normale ?","365"]];
+
+var score=0;
+for(var i=0;i<questions.length;i++){
+  let vraireponse=questions[i][1];
+  let question=questions[i][0];
+  let userreponse=prompt(question);
+  if(userreponse== null){
+    alert("question ignoré");
+    continue;
+  }
+  if(userreponse.toLowerCase()===vraireponse.toLowerCase()){
+    alert("VRAI😎");
+    score++;
+  }else{
+    alert("FAUX😓");
+  }
+}
+alert("Vous avez repondez correctement a "+score+"question sur"+questions.length);
+}
+  </script>
+  </body>
+</html>
